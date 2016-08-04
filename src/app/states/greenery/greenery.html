@@ -1,0 +1,38 @@
+<div ng-controller='GreeneryController as gc'>
+  <div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="../../" class="navbar-brand">{{ 'APP_NAME' | translate }}</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ng-click="gc.changeLang('ru')">{{ 'RU' | translate }}</a></li>
+        <li><a ng-click="gc.changeLang('en')">{{ 'EN' | translate }}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3">
+      <plant-menu ng-if="gc.currentGreenery" greenery="gc.currentGreenery"></plant-menu>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div ng-switch on="gc.status">
+        <plant-view   ng-if="gc.currentPlant" plant="gc.currentPlant" ng-switch-when="viewPlant"></plant-view>
+        <div class="animate-switch" ng-switch-when="home">Home Span</div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <greenery-menu greeneries="gc.greeneries"></greenery-menu>
+    </div>
+  </div>
+</div>
+  </div>

@@ -1,0 +1,8 @@
+<h3>Greeneries</h3>
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="item in $ctrl.greeneries" ng-click="$ctrl.changeGreenery(item)">
+    <span class="badge">{{$ctrl.plantService.getGreneryStatus(item)}}</span>
+    {{item.name}}
+  </li>
+  <add-greenery></add-greenery>
+</ul>

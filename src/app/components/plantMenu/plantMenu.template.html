@@ -1,0 +1,9 @@
+<h3>{{$ctrl.greenery.name}}</h3>
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="plant in $ctrl.greenery.plants" class="{{$ctrl.getRowClass(plant)}}"
+      ng-click="$ctrl.changePlant(plant)">
+    <span>{{plant.name}}</span>
+    <span></span>
+    <span class="badge">{{$ctrl.getStatus(plant)}}</span>
+  </li>
+</ul>

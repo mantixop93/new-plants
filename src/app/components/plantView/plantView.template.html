@@ -1,0 +1,16 @@
+<h3>{{$ctrl.plant.name}}</h3>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <p>Name: {{$ctrl.plant.name}}</p>
+      <p>Period: {{$ctrl.plant.period}}</p>
+      <p><a ng-click="$ctrl.waterPlant()" class="btn btn-primary btn">Water</a></p>
+      <p><a class="btn btn-primary btn">Edit</a></p>
+      <p><a class="btn btn-primary btn">Delete</a></p>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <p>History:</p>
+      <p ng-repeat="item in $ctrl.plant.history | orderBy:1:-1| limitTo:5 track by $index  ">{{item | date}}</p>
+    </div>
+  </div>
+</div>
